@@ -11,7 +11,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 
-const TeamCard = () => {
+const TeamCard = ({ imageUrl = '/assets/images/board_21-21/Sajan_Mahat.jpg',name="Sajan Mahat" ,position="Executive"}) => {
+  console.log(imageUrl)
   return (
     <Card
       sx={{
@@ -38,16 +39,16 @@ const TeamCard = () => {
             mb: '-64px',
           }}
           height="176"
-          image="/assets/images/board_21-21/Sajan_Mahat.jpg"
+          image={imageUrl}
           alt="Paella dish"
         />
       </Box>
       <CardContent sx={{ pt: '80px' }}>
         <Typography sx={{ fontSize: '18px' }} color="text.primary" align="center">
-          Sajan Mahat
+          {name}
         </Typography>
         <Typography variant="subtitle2" color="text.secondary" align="center" fontWeight="600">
-          {'KUOSC Coordinator'.toUpperCase()}
+          {position.toUpperCase()}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }} disableSpacing>
